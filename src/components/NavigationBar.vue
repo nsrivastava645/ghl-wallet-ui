@@ -5,7 +5,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <router-link class="nav-link" :to="{ name: 'WalletSetup' }">Wallet Setup</router-link>
+                        <router-link class="nav-link" :to="{ name: 'WalletSetup' }">Transact</router-link>
                     </li>
                     <li class="nav-item">
                         <router-link class="nav-link" :to="{ name: 'Transactions' }">Transaction List</router-link>

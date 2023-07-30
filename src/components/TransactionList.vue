@@ -13,7 +13,7 @@
               <th @click="sortTransactions('id')">ID<span :class="getSortClass('_id')"></span></th>
               <th @click="sortTransactions('type')"><span :class="getSortClass('type')"></span>Type</th>
               <th @click="sortTransactions('amount')"><span :class="getSortClass('amount')"></span>Amount</th>
-              <th @click="sortTransactions('balance')"><span :class="getSortClass('balance')"></span>New Balance</th>
+              <th @click="sortTransactions('balance')"><span :class="getSortClass('balance')"></span>Updated Balance</th>
               <th @click="sortTransactions('description')">De<span :class="getSortClass('description')"></span>scription</th>
               <th @click="sortTransactions('date')"><span :class="getSortClass('date')"></span>Transaction Time</th>
             </tr>
@@ -22,8 +22,8 @@
             <tr v-for="transaction in sortedTransactions" :key="transaction._id">
               <td>{{ transaction._id }}</td>
               <td>{{ transaction.type }}</td>
-              <td>{{ transaction.amount }}</td>
-              <td>{{ transaction.balance }}</td>
+              <td>₹{{ transaction.amount }}</td>
+              <td>₹{{ transaction.balance }}</td>
               <td>{{ transaction.description }}</td>
               <td>{{ formatDate(transaction.date) }}</td>
             </tr>

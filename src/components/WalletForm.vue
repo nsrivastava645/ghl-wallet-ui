@@ -11,7 +11,7 @@
               </div>
               <div class="card-body">
                 <p><strong>Name:</strong> {{ walletDetails?.name }}</p>
-                <p><strong>Balance:</strong> {{ walletDetails?.balance?.toFixed(4) }}</p>
+                <p><strong>Balance:</strong> ₹{{ walletDetails?.balance?.toFixed(4) }}</p>
               </div>
             </div>
           </div>
