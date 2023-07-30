@@ -27,7 +27,7 @@
                 <h3 class="mb-0">Submit Transaction</h3>
               </div>
               <div class="card-body">
-                <form ref="transactionForm" @submit.prevent="submitTransaction">
+                <form @submit.prevent="submitTransaction">
                   <div class="form-group">
                     <label for="transactionType">Transaction Type:</label>
                     <select class="form-control" v-model="transactionType" required>
@@ -62,7 +62,7 @@
                 <h3 class="mb-0">Create Wallet</h3>
               </div>
               <div class="card-body">
-                <form ref="walletForm" @submit.prevent="submitWallet">
+                <form @submit.prevent="submitWallet">
                   <div class="form-group">
                     <label for="name">Name:</label>
                     <input type="text" class="form-control" v-model="name" required>
@@ -111,7 +111,6 @@ export default {
           name: this.name,
           balance: this.balance,
         };
-        this.$refs.walletForm.$el.reset();
       } catch (error) {
         console.error('Error:', error.message);
         alert('Error occurred while creating the wallet.');
