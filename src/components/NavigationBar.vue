@@ -10,9 +10,36 @@
                     <li class="nav-item">
                         <router-link class="nav-link" :to="{ name: 'Transactions' }">Transaction List</router-link>
                     </li>
+                    <li v-if="hasWalletId" class="nav-item">
+                        <router-link @click="logout()" class="nav-link text-danger" :to="{ name: 'WalletSetup' }">
+                            Logout
+                        </router-link>
+
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 </template>
+<script>
+export default {
+    data() {
+        return {
+            hasWalletId: false,
+        };
+    },
+    methods: {
+        logout() {
+            localStorage.removeItem('walletId');
+            location.reload();
+        }
+    },
+    mounted() {
+        const walletId = localStorage.getItem('walletId');
+        if (walletId) {
+            this.hasWalletId = true;
+        }
+    },
+}
+</script>
   

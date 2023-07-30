@@ -111,6 +111,7 @@ export default {
           name: this.name,
           balance: this.balance,
         };
+        location.reload();
       } catch (error) {
         console.error('Error:', error.message);
         alert('Error occurred while creating the wallet.');
