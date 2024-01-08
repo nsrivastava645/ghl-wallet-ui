@@ -10,7 +10,6 @@ phases:
       - echo install
       - n 16.13.0
       - npm install -y npm@latest
-      - npm install -g @angular/cli@13.3.10
   pre_build:
     commands:
       - echo pre_build
