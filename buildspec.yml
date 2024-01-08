@@ -1,17 +1,31 @@
+# Do not change version. This is the version of aws buildspec, not the version of your buldspec file.
 version: 0.2
 
 phases:
   install:
     runtime-versions:
+      # https://docs.aws.amazon.com/codebuild/latest/userguide/runtime-versions.html
       nodejs: 16
     commands:
+      - echo install
+      - n 16.13.0
+      # - npm install -y npm@latest
+  pre_build:
+    commands:
+      - echo pre_build
       - npm install
-
   build:
     commands:
-      - npm run build
+      - echo build
+      - echo Build started on `date`
+      # - npm run build-$ENV
+  post_build:
+    commands:
+      - echo post_build
+      - echo Build completed on `date`
 
 artifacts:
+  name: ghl-wallet-ui
+  s3-prefix: ghl-wallet-ui
   files:
     - '**/*'
-  base-directory: dist
