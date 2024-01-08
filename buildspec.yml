@@ -4,17 +4,13 @@ version: 0.2
 phases:
   install:
     runtime-versions:
+      # https://docs.aws.amazon.com/codebuild/latest/userguide/runtime-versions.html
       nodejs: 16
     commands:
-        commands:
-      - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
-      - export NVM_DIR="$HOME/.nvm"
-      - source "$NVM_DIR/nvm.sh"
-      - nvm install 16.14
-      - nvm use 16.14
       - echo install
-      - n 16.14.0
-      # - npm install -y npm@latest
+      - n 16.13.0
+      - npm install -y npm@latest
+      - npm install -g @angular/cli@13.3.10
   pre_build:
     commands:
       - echo pre_build
@@ -23,7 +19,7 @@ phases:
     commands:
       - echo build
       - echo Build started on `date`
-      # - npm run build-$ENV
+      - npm run build-$ENV
   post_build:
     commands:
       - echo post_build
@@ -36,4 +32,3 @@ artifacts:
     - '**/*'
   exclude-paths:
     - ./node_modules/**/*
-    - ./.angular/**/*
