@@ -11,11 +11,8 @@ pipeline {
             steps {
                 script {
                     echo 'Pre Build'
-                    // Install Node.js using the NodeJS Plugin
                     tool name: 'NodeJS', type: 'jenkins.plugins.nodejs.tools.NodeJSInstallation'
-                    // Install npm globally
                     sh 'npm install -g npm@${NPM_VERSION}'
-                    // Install project dependencies
                     sh 'npm install'
                 }
             }
