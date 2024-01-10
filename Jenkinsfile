@@ -1,12 +1,14 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'node:16.13.0-alpine3.19' 
+            args '-p 3000:3000' 
+        }
+    }
 
     environment {
         NODEJS_VERSION = '16'
         NPM_VERSION = 'latest'
-    }
-    tools {
-        nodeJs 16.13.0
     }
 
     stages {
