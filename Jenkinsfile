@@ -1,7 +1,6 @@
 pipeline {
-    agent {
-        label 'linux'
-    }
+    agent any
+
     environment {
         NODEJS_VERSION = '16'
         NPM_VERSION = 'latest'
