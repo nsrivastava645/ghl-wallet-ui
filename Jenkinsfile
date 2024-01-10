@@ -6,22 +6,16 @@ pipeline {
         NPM_VERSION = 'latest'
     }
 
-    stages {
-        stage('Install') {
-            steps {
-                script {
-                    echo 'install'
-                    sh 'nvm ls'
-                    // sh "sudo ${NODEJS_VERSION}"
-                    // sh "npm install -y npm@${NPM_VERSION}"
-                }
-            }
-        }
+    tools {
+        nodejs "${NODEJS_VERSION}"
+    }
 
+    stages {
         stage('Pre Build') {
             steps {
                 script {
-                    echo 'pre_build'
+                    echo 'Pre Build'
+                    sh 'npm install -g npm@${NPM_VERSION}'
                     sh 'npm install'
                 }
             }
