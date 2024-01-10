@@ -6,7 +6,7 @@ pipeline {
         NPM_VERSION = 'latest'
     }
     tools {
-        nodejs "${NODEJS_VERSION}"
+        nodejs
     }
 
     stages {
@@ -14,7 +14,7 @@ pipeline {
             steps {
                 script {
                     echo 'Pre Build'
-                    sh 'npm install -g npm@${NPM_VERSION}'
+                    sh "npm install -g npm@${NPM_VERSION}"
                     sh 'npm install'
                 }
             }
