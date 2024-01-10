@@ -6,10 +6,6 @@ pipeline {
         NPM_VERSION = 'latest'
     }
 
-    tools {
-        nodejs "${NODEJS_VERSION}"
-    }
-
     stages {
         stage('Pre Build') {
             steps {
