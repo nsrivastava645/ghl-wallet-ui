@@ -11,8 +11,9 @@ pipeline {
             steps {
                 script {
                     echo 'install'
-                    sh "n ${NODEJS_VERSION}"
-                    sh "npm install -y npm@${NPM_VERSION}"
+                    sh 'nvm ls'
+                    // sh "sudo ${NODEJS_VERSION}"
+                    // sh "npm install -y npm@${NPM_VERSION}"
                 }
             }
         }
