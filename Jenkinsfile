@@ -5,18 +5,21 @@ pipeline {
         NODEJS_VERSION = '16'
         NPM_VERSION = 'latest'
     }
+    tools {
+        nodejs "${NODEJS_VERSION}"
+    }
 
     stages {
         stage('Pre Build') {
             steps {
                 script {
                     echo 'Pre Build'
-                    tool name: 'NodeJS', type: 'jenkins.plugins.nodejs.tools.NodeJSInstallation'
                     sh 'npm install -g npm@${NPM_VERSION}'
                     sh 'npm install'
                 }
             }
         }
+
 
         stage('Build') {
             steps {
