@@ -6,7 +6,7 @@ pipeline {
         NPM_VERSION = 'latest'
     }
     tools {
-        nodejs
+        nodejs 16.13.0
     }
 
     stages {
